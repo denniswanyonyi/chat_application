@@ -16,11 +16,10 @@ app.get('/', function(req, res) {
 
 io.sockets.on('connection', function(socket) {
 	socket.on('send_message', function(data) {
-		io.sockets.emit('new message', { message: data, username: socket.username });
+		io.sockets.emit('new message', { message: data, username: socket.username, timestamp: new Date() });
 	});
 
 	function getUsers() {
-		console.log(users);
 		io.sockets.emit('get users', users.sort());
 	};
 
@@ -48,6 +47,7 @@ io.sockets.on('connection', function(socket) {
 	socket.on('disconnect', function(data) {
 		if(!socket.username) return;
 
+		io.sockets.emit('logged out', socket.username);
 		users.splice(users.indexOf(socket.username), 1);
 		getUsers();
 	})

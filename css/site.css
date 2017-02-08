@@ -111,3 +111,12 @@ footer {
 #users li {
 
 }
+
+.timestamp {
+	font-size: 12px;
+	color: gray;
+}
+
+.timestamp > span {
+	float: right;
+}
