@@ -67,6 +67,10 @@ body > .container {
 	margin: 5px;
 }
 
+.xs-margin-bottom {
+	margin-bottom: 5px;
+}
+
 footer {
 	position: absolute;
 	bottom: 0;
@@ -98,4 +102,12 @@ footer {
 
 .relative {
 	position: relative;
+}
+
+#users {
+	list-style: none;
+}
+
+#users li {
+
 }

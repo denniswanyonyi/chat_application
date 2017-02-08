@@ -47,7 +47,7 @@ $(function() {
 		} else {
 			var users = '';
 			for (var i = 0; i < data.length; i++) {
-				users += data[i] + '<br />';
+				users += '<li>'+ data[i] + '<li/>';
 			}
 			$('#users').html(users);
 		}
